@@ -85,6 +85,7 @@ public abstract class Bag {
     public boolean addItem(String item){
         if (getNumberOfContents() < getCapacity()){
             this.contents.add(item);
+            this.numberOfContents += 1;
             return true;
         }
         else return false;
@@ -112,6 +113,7 @@ public abstract class Bag {
             int index = this.contents.size() - 1;
             String item = this.contents.get(index);
             this.contents.remove(index);
+            this.numberOfContents -= 1;
             return item;
         }
     }
